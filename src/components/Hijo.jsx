@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Hijo = ({fondo}) => {
+const Hijo = ({tema}) => {
   
 
   return (
     <>
-        <div style={fondo}>
+        <div style={tema}>
           <h1>Este es el hijo</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, impedit odio. Fugit perspiciatis suscipit, quidem eos porro consectetur obcaecati debitis tempora voluptatum minus sed rerum nobis itaque ducimus quo non.</p>
         </div>

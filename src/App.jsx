@@ -62,15 +62,33 @@ function App() {
     
   // }
 
-    let [fondo, setColor]= useState({backgroundColor:"white"});
-    function cambiarColor(color) {
-      if (color === "red") {
-        setColor({backgroundColor:"red"});
+    // let [fondo, setColor]= useState({backgroundColor:"white"});
+    // function cambiarColor(color) {
+    //   if (color === "red") {
+    //     setColor({backgroundColor:"red"});
+    //   }
+    //   if (color === "blue") {
+    //     setColor({backgroundColor:"blue"});
+    //   }
+    // }
+    let [contador, setContador] = useState(0);
+    let [tema, setTema]= useState({backgroundColor:"white"});
+    let [letra, setLetra]= useState({color:"black"});
+
+    function cambio(contador) {
+      setContador(contador+1);
+      console.log(contador);
+
+      if (contador%2!==0) {
+        setTema({backgroundColor:"white"});
+        setLetra({color:"black"})
       }
-      if (color === "blue") {
-        setColor({backgroundColor:"blue"});
+      if (contador%2===0) {
+        setTema({backgroundColor:"black"});
+        setLetra({color:"white"})
       }
     }
+
   return (
     <>
       {/* <h1>Cabecera h1</h1>
@@ -120,10 +138,14 @@ function App() {
       
       
       {/* <button onClick={()=>cambiar("+")}>+ </button>
-      <button onClick={()=>cambiar("-")}>- </button> */}
-      <button onClick={()=>cambiarColor("red")}>rojo </button>
+      <button onClick={()=>cambiar("-")}>- </button>  */}
+
+      {/* <button onClick={()=>cambiarColor("red")}>rojo </button>
       <button onClick={()=>cambiarColor("blue")}>azul </button>
-      <Hijo fondo={fondo}></Hijo>
+      <Hijo fondo={fondo}></Hijo> */}
+
+      <button onClick={()=>cambio(contador)}> cambio </button>
+      <Hijo tema={tema}></Hijo>
     </>
   )
 }
